@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import person,role,employee,access_rights
 # Create your views here.
@@ -15,5 +15,6 @@ def employee_create(request):
 def employee_edit(request):
     return render (request, 'employee-edit.html')
 
-def employee_view(request):
-    return render (request, 'employee-view.html')
+def employee_view(request, id):
+    employee_obj = get_object_or_404(employee, id=id)
+    return render(request, 'employee-view.html', {'employee': employee_obj})

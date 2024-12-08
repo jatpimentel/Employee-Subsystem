@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>View Employee</title>
-    <link rel="stylesheet" href="../static/employee-view.css" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'employee-view.css' %}" />
   </head>
   <body>
     <div class="app-container">
@@ -25,27 +26,32 @@
         <div class="employee-view">
           <div class="employee-field">
             <label class="field-label">Username</label>
-            <span class="field-value">jc1234</span>
+            <span class="field-value">{{ employee.person.username }}</span>
           </div>
           <div class="employee-field">
             <label class="field-label">Name</label>
-            <span class="field-value">Jeff Cruz</span>
+            <span class="field-value"
+              >{{ employee.person.first_name }} {{employee.person.last_name}}
+            </span>
           </div>
           <div class="employee-field">
             <label class="field-label">Email</label>
-            <span class="field-value">JeffCruz@gmail.com</span>
+            <span class="field-value">{{ employee.person.email }}</span>
           </div>
           <div class="employee-field">
             <label class="field-label">Contact Number</label>
-            <span class="field-value">09687345344</span>
+            <span class="field-value"
+              >{{ employee.person.contact_number }}</span
+            >
           </div>
           <div class="employee-field">
             <label class="field-label">Role</label>
-            <span class="field-value">Manager</span>
+            <span class="field-value">{{ employee.role.role_name }}</span>
           </div>
           <div class="employee-field">
             <label class="field-label">PIN</label>
-            <span class="field-value"> </span>
+            <span class="field-value">{{ employee.pin }}</span>
+            <!-- Adjust based on actual field name -->
           </div>
         </div>
       </div>

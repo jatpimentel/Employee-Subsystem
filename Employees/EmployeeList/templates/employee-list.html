@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Employee List</title>
-    <link rel="stylesheet" href="../static/employee-list.css" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'employee-list.css' %}" />
   </head>
   <body>
     <div class="app-container">
@@ -41,7 +42,10 @@
         </thead>
         <tbody>
           {% for item in employees %}
-          <tr>
+          <tr
+            onclick="window.location.href='/employee-view/{{item.id}}';"
+            style="cursor: pointer"
+          >
             <td>{{item.person.username}}</td>
             <td>{{item.person.first_name}} {{item.person.last_name}}</td>
             <td>{{item.person.email}}</td>
