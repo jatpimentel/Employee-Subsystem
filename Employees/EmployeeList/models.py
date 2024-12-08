@@ -21,13 +21,24 @@ class role (models.Model):
         return self.role_name
 
 class employee (models.Model):
-    person = models.ForeignKey(person, on_delete=models.CASCADE, blank=True,null=True)
-    role = models.ForeignKey(role, on_delete=models.CASCADE, blank=True,null=True)
+    ACTIVE = 'active'
+    INACTIVE = 'inactive'
+    EMPLOYEE_STATUS_CHOICES = [
+        (ACTIVE, 'Active'),
+        (INACTIVE, 'Not Active'),
+    ]
+    
+    person = models.ForeignKey(person, on_delete=models.CASCADE, blank=True, null=True)
+    role = models.ForeignKey(role, on_delete=models.CASCADE, blank=True, null=True)
     pin = models.PositiveIntegerField()
-    employee_status = models.CharField(max_length=255)
+    employee_status = models.CharField(
+        max_length=8,
+        choices=EMPLOYEE_STATUS_CHOICES,
+        default=ACTIVE,
+    )
 
     def __str__(self):
-        return self.person.first_name+ ' ' + self.person.last_name + ' --- Status: ' +self.employee_status
+        return self.person.first_name + ' ' +self.person.last_name + ' --- '
     
 class access_rights (models.Model):
     role = models.ForeignKey(role, on_delete=models.CASCADE, blank=True,null=True)

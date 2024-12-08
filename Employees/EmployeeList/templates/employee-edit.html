@@ -12,36 +12,59 @@
       <div class="navbar">
         <div class="navbar-content">
           <div class="back-button">
-            <button class="back-button"><</button>
+            <button class="back-button" onclick="window.location.href='/employee-view/{{employee.id}}';"
+            style="cursor: pointer"><</button>
           </div>
 
           <span class="logo">Edit Employee</span>
-          <div class="save-button">
-            <button class="save-button">Save</button>
-          </div>
         </div>
       </div>
 
       <div class="form-container">
-        <form class="employee-form">
-          <label>Username</label>
-          <input type="text" value="jc1234" />
-          <label>Name</label>
-          <input type="text" value="Jeff Cruz" />
-          <label>Email</label>
-          <input type="email" value="JeffCruz@gmail.com" />
-          <label>Contact Number</label>
-          <input type="text" value="09687345344" />
-          <label>Role</label>
-          <select name="role">
-            <option value="Manager" selected>Manager</option>
-            <option value="Employee">Employee</option>
-          </select>
-          <label>PIN</label>
-          <div class="pin">
-            <input type="text" />
-          </div>
+        {% csrf_token %}
+        <form method="POST" action="{% url 'employee-edit' id=employee.id %}">
+            {% csrf_token %}
+            <div class="employee-form">
+                <label>Username</label>
+                <input type="text" name="username" value="{{ employee.person.username }}" required/>
+            </div>
+            <div class="employee-form">
+                <label>First Name</label>
+                <input type="text" name="first_name" value="{{ employee.person.first_name }}" required/>
+            </div>
+            <div class="employee-form">
+                <label>Last Name</label>
+                <input type="text" name="last_name" value="{{ employee.person.last_name }}" required/>
+            </div>
+            <div class="employee-form">
+                <label>Email</label>
+                <input type="email" name="email" value="{{ employee.person.email }}" required/>
+            </div>
+            <div class="employee-form">
+                <label>Contact Number</label>
+                <input type="text" name="contact_number" value="{{ employee.person.contact_number }}" required/>
+            </div>
+            <div class="employee-form">
+                <label>Role</label>
+                <select name="role" required>
+                    <option value="Cashier" name ="role_name" selected>Cashier</option>
+                    <option value="Manager" name ="role_name" selected>Manager</option>
+                </select>
+            </div>
+            <div class="employee-form">
+                <label>PIN</label>
+                <input type="number" name="pin" value="{{ employee.pin }}" required/>
+            </div>
+            <div class="employee-form">
+                <label>Employee Status</label>
+                <select name="employee_status" required>
+                    <option value="active" {% if employee.employee_status == 'active' %}selected{% endif %}>Active</option>
+                    <option value="inactive" {% if employee.employee_status == 'inactive' %}selected{% endif %}>Inactive</option>
+                </select>
+            </div>
+            <button class=save-button type="submit">Save</button>
         </form>
+        
       </div>
     </div>
   </body>

@@ -12,35 +12,58 @@
       <div class="navbar">
         <div class="navbar-content">
           <div class="back-button">
-            <button class="back-button"><</button>
+            <button
+              class="back-button"
+              onclick="window.location.href='/employee-list/';"
+            >
+              <
+            </button>
           </div>
 
           <span class="logo">Create Employee</span>
-          <div class="save-button">
-            <button class="save-button">Save</button>
-          </div>
         </div>
       </div>
 
       <div class="form-container">
-        <form class="employee-form">
-          <label>Username</label>
-          <input type="text" />
-          <label>Name</label>
-          <input type="text" />
-          <label>Email</label>
-          <input type="email" />
-          <label>Contact Number</label>
-          <input type="text" />
-          <label>Role</label>
-          <select name="role">
-            <option value="Manager">Manager</option>
-            <option value="Employee">Employee</option>
-          </select>
-          <label>PIN</label>
-          <div class="pin">
-            <input type="text" />
+        <form method="POST" action="{% url 'employee-create' %}">
+          {% csrf_token %}
+          <div class="employee-form">
+            <label>Username</label>
+            {{ person_form.username }}
           </div>
+          <div class="employee-form">
+            <label>First Name</label>
+            {{ person_form.first_name }}
+          </div>
+          <div class="employee-form">
+            <label>Last Name</label>
+            {{ person_form.last_name }}
+          </div>
+          <div class="employee-form">
+            <label>Email</label>
+            {{ person_form.email }}
+          </div>
+          <div class="employee-form">
+            <label>Contact Number</label>
+            {{ person_form.contact_number }}
+          </div>
+
+          <div class="employee-form">
+            <label>Role</label>
+            {{ employee_form.role }}
+          </div>
+          <div class="employee-form">
+            <label>PIN</label>
+            {{ employee_form.pin }}
+          </div>
+
+          <div class="employee-form">
+            <label>Employee Status</label>
+            {{ employee_form.employee_status }}
+          </div>
+
+          <!-- Save button inside the form -->
+          <button type="submit" class="save-button">Save</button>
         </form>
       </div>
     </div>

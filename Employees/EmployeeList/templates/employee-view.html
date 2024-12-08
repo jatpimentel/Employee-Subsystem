@@ -12,12 +12,23 @@
       <div class="navbar">
         <div class="navbar-content">
           <div class="back-button">
-            <button class="back-button"><</button>
+            <button
+              class="back-button"
+              onclick="window.location.href='/employee-list/';"
+            >
+              <
+            </button>
           </div>
 
           <span class="logo">View Employee</span>
           <div class="edit-button">
-            <button class="edit-button">Edit</button>
+            <button
+              class="edit-button"
+              onclick="window.location.href='/employee-edit/{{employee.id}}';"
+              style="cursor: pointer"
+            >
+              Edit
+            </button>
           </div>
         </div>
       </div>
@@ -46,7 +57,7 @@
           </div>
           <div class="employee-field">
             <label class="field-label">Role</label>
-            <span class="field-value">{{ employee.role.role_name }}</span>
+            <span class="field-value"> {{ employee.role.role_name }} </span>
           </div>
           <div class="employee-field">
             <label class="field-label">PIN</label>
