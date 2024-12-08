@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffe6dc;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.navbar {
+  background-color: #b51616;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80px;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 600px;
+}
+
+.back-button {
+  background-color: #b51616;
+  color: white;
+  border: none;
+  font-size: 50px;
+  cursor: pointer;
+  margin-right: 4px;
+  font-weight: bold;
+}
+
+table {
+  width: 90%; /* Make the table take most of the screen width */
+  margin: 20px auto; /* Center the table */
+  border-collapse: collapse; /* Remove gaps between table cells */
+  background-color: #fff; /* Set a white background */
+  font-size: 16px; /* Make text more readable */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+th,
+td {
+  text-align: left; /* Align text to the left */
+  padding: 12px 15px; /* Add spacing inside cells */
+  border: 1px solid #ddd; /* Add light borders for separation */
+}
+
+th {
+  background-color: #b51616; /* Add a header background color */
+  color: white; /* Make text white in the header */
+  text-transform: uppercase; /* Make header text uppercase */
+  font-weight: bold; /* Make header text bold */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Add alternate row color */
+}
+
+tr:hover {
+  background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+td {
+  font-weight: normal; /* Keep table data font weight normal */
+}
+
+.add-button {
+  background-color: #3bcc2e;
+  color: white;
+  border: none;
+  padding: 15px; /* Equal padding for width and height */
+  border-radius: 50%; /* Make the button round */
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 60px; /* Set a fixed width */
+  height: 60px; /* Set a fixed height */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the icon inside the button */
+  font-size: 30px; /* Adjust the font size for the "+" sign */
+  transition: transform 0.2s ease, background-color 0.2s ease; /* Smooth hover effect */
+}
+
+.add-button:hover {
+  background-color: #34a62a; /* Slightly darker green on hover */
+  transform: scale(1.1); /* Slightly enlarge the button on hover */
+}

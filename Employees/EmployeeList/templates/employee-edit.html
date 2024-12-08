@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="../static/employee-edit.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="navbar">
+        <div class="navbar-content">
+          <div class="back-button">
+            <button class="back-button"><</button>
+          </div>
+
+          <span class="logo">Edit Employee</span>
+          <div class="save-button">
+            <button class="save-button">Save</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-container">
+        <form class="employee-form">
+          <label>Username</label>
+          <input type="text" value="jc1234" />
+          <label>Name</label>
+          <input type="text" value="Jeff Cruz" />
+          <label>Email</label>
+          <input type="email" value="JeffCruz@gmail.com" />
+          <label>Contact Number</label>
+          <input type="text" value="09687345344" />
+          <label>Role</label>
+          <select name="role">
+            <option value="Manager" selected>Manager</option>
+            <option value="Employee">Employee</option>
+          </select>
+          <label>PIN</label>
+          <div class="pin">
+            <input type="text" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

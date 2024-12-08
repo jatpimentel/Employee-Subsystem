@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee List</title>
+    <link rel="stylesheet" href="../static/employee-list.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="navbar">
+        <div class="navbar-content">
+          <div class="back-button">
+            <button class="back-button"><</button>
+          </div>
+
+          <span class="logo">Employee List</span>
+
+          <div class="radio-buttons">
+            <label>
+              <input type="radio" name="status" />
+              Active
+            </label>
+            <label>
+              <input type="radio" name="status" />
+              Inactive
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact Number</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in employees %}
+          <tr>
+            <td>{{item.person.username}}</td>
+            <td>{{item.person.first_name}} {{item.person.last_name}}</td>
+            <td>{{item.person.email}}</td>
+            <td>{{item.person.contact_number}}</td>
+            <td>{{item.role.role_name}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <button class="add-button">+</button>
+    </div>
+  </body>
+</html>
