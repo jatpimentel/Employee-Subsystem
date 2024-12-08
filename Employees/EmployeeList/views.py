@@ -32,28 +32,30 @@ def employee_create(request):
 
     return render(request, 'employee-create.html', {'person_form': person_form, 'employee_form': employee_form})
 
-
 def employee_edit(request, id):
+    # Fetch the existing employee instance
     employee_obj = get_object_or_404(employee, id=id)
-    if request.method == "POST":
-        person_form = personform(request.POST)
-        employee_form = employeeform(request.POST)
-        if person_form.is_valid() and employee_form.is_valid():
-            person_instance = person_form.save()
-            employee_instance = employee_form.save(commit=False)
-            employee_instance.person = person_instance
-            employee_instance.save()
+    person_obj = employee_obj.person
 
+    if request.method == "POST":
+        person_form = personform(request.POST, instance=person_obj)
+        employee_form = employeeform(request.POST, instance=employee_obj)
+
+        if person_form.is_valid() and employee_form.is_valid():
+            person_form.save()
+            employee_form.save(commit=False)  
+            employee_form.instance.person = person_form.instance  
+            employee_form.instance.save()  
             return redirect('employee') 
         else:
             print(person_form.errors)
             print(employee_form.errors)
-
     else:
-        person_form = personform()  
-        employee_form = employeeform()  
-    # Pass the employee object to the template
-    return render(request, 'employee-edit.html', {'employee': employee_obj,'person_form': person_form, 'employee_form': employee_form})
+        person_form = personform(instance=person_obj)
+        employee_form = employeeform(instance=employee_obj)
+
+    return render(request, 'employee-edit.html', {'employee': employee_obj, 'person_form': person_form, 'employee_form': employee_form})
+
 
 
 

@@ -24,6 +24,8 @@
         {% csrf_token %}
         <form method="POST" action="{% url 'employee-edit' id=employee.id %}">
             {% csrf_token %}
+            
+            <!-- Employee Personal Fields -->
             <div class="employee-form">
                 <label>Username</label>
                 <input type="text" name="username" value="{{ employee.person.username }}" required/>
@@ -44,12 +46,11 @@
                 <label>Contact Number</label>
                 <input type="text" name="contact_number" value="{{ employee.person.contact_number }}" required/>
             </div>
+            
+            <!-- Employee-Specific Fields -->
             <div class="employee-form">
                 <label>Role</label>
-                <select name="role" required>
-                    <option value="Cashier" name ="role_name" selected>Cashier</option>
-                    <option value="Manager" name ="role_name" selected>Manager</option>
-                </select>
+                {{ employee_form.role }}  <!-- Bound to employee_form -->
             </div>
             <div class="employee-form">
                 <label>PIN</label>
@@ -62,9 +63,9 @@
                     <option value="inactive" {% if employee.employee_status == 'inactive' %}selected{% endif %}>Inactive</option>
                 </select>
             </div>
-            <button class=save-button type="submit">Save</button>
+
+            <button class="save-button" type="submit">Save</button>
         </form>
-        
       </div>
     </div>
   </body>
