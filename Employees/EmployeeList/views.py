@@ -61,13 +61,24 @@ def employee_view(request, id):
     return render(request, 'employee-view.html', {'employee': employee_obj})
 
 def role_list(request):
-    return render(request,'role-list.html')
+    all_roles = role.objects.all()  # Get all roles
+    role_counts = {}
+
+    for role_item in all_roles:  # Iterate over each role
+        role_counts[role_item] = employee.objects.filter(role=role_item).count()
+
+    # Pass the roles and counts to the template
+    return render(request, 'role-list.html', {'roles_with_counts': role_counts, 'roles': all_roles})
+
+
 
 def role_create(request):
     return render(request,'role-create.html')
 
-def role_view(request):
-    return render(request,'role-view.html')
+def role_view(request, id):
+    role_obj = get_object_or_404(role, id=id)
+    return render(request,'role-view.html', {'role': role_obj})
 
-def role_edit(request):
-    return render(request,'role-edit.html')
+def role_edit(request, id):
+    role_obj = get_object_or_404(role, id=id)
+    return render(request,'role-edit.html' , {'role': role_obj})

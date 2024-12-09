@@ -1,0 +1,94 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffe6dc;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.navbar {
+  background-color: #b51616;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80px;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 15px; /* Adjust margin for better spacing */
+}
+
+.back-button {
+  background-color: #b51616;
+  color: white;
+  border: none;
+  font-size: 50px;
+  cursor: pointer;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.edit-button {
+  background-color: #b51616;
+  color: white;
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #9f1212; /* Slightly darker red on hover */
+  transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+.content {
+  padding: 20px; /* Add padding around content */
+  flex-grow: 1; /* Allow content to grow */
+}
+
+.list {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+}
+
+.list-item {
+  display: flex;
+  align-items: center; /* Align icon and text vertically */
+  margin-bottom: 15px; /* Space between items */
+}
+
+.link {
+  font-size: 24px; /* Increase font size for links */
+  color: #3f3f3f; /* Link color */
+  text-decoration: none; /* Remove underline from links */
+  margin-left: 10px; /* Space between icon and text */
+  flex-grow: 1; /* Allow link to take available space */
+}
+
+.link:hover {
+  text-decoration: underline; /* Underline on hover for links */
+}
+
+.icon {
+  font-size: 28px; /* Increase icon size */
+  color: #3f3f3f;
+  width: 30px; /* Fixed width for alignment */
+  text-align: center; /* Center the icon within the width */
+}
