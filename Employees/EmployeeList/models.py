@@ -14,8 +14,8 @@ class person (models.Model):
     
 class role (models.Model):
     role_name = models.CharField(max_length=255)
-    role_type = models.CharField(max_length=255)
-    role_status = models.CharField(max_length=255)
+    role_type = models.CharField(max_length=255,default="onsite")
+    role_status = models.CharField(max_length=255,default="active")
 
     def __str__(self):
         return self.role_name

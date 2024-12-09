@@ -3,9 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Role List</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'role-list.css' %}" />
   </head>
   <body>
-    Role-List
+    <div class="role-list-container">
+      <div class="header">
+        <button
+          class="back-button"
+          onclick="window.location.href='/';"
+          style="cursor: pointer"
+        >
+          ←
+        </button>
+        <h2>Roles</h2>
+        <div class="filters">
+          <input type="radio" name="status" id="active" checked />
+          <label for="active">Active</label>
+          <input type="radio" name="status" id="inactive" />
+          <label for="inactive">Inactive</label>
+        </div>
+        <button class="search-button">🔍</button>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th>Employees</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for role, count in roles_with_counts.items %}
+            <tr onclick="window.location.href='/role-view/{{role.id}}';"
+            style="cursor: pointer">
+              <td>{{ role.role_name }}</td>
+              <td>{{ count }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+    <button class="add-button" onclick="window.location.href='/role-create/';">+</button>
+ </div>
   </body>
 </html>

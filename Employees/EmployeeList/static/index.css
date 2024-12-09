@@ -67,13 +67,13 @@ body {
   margin: 20px 0; /* Add spacing at the top and bottom */
 }
 
-.role-view {
+.employee-view {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.role-field {
+.employee-field {
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -91,73 +91,26 @@ body {
   border-bottom: 2px solid black;
   color: black;
 }
-.role-field:last-child .field-value {
+.employee-field:last-child .field-value {
   border-bottom: none; /* Remove the bottom border for the PIN field */
 }
-input.field-value {
-  width: 100%; /* Full width */
-  padding: 10px; /* Padding inside the input */
-  border: 2px solid black; /* Border */
-  border-radius: 4px; /* Rounded corners */
-  font-size: 16px; /* Font size */
-}
 
-/* Toggle switch styles */
-.toggle {
-  position: relative;
-  display: inline-block;
-  width: 34px;
-  height: 20px;
-  margin-left: 10px; /* Spacing between label and toggle */
-}
-
-.toggle input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
+.employee-icon {
   position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 20px; /* Rounded edges */
+  width: 48.75px;
+  height: 27.08px;
+
+  background: #000000;
 }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  left: 2px;
-  bottom: 2px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%; /* Circle shape */
+.icon nav-bar {
+  font-size: 60px;
+  margin-right: 15px;
+  color: #ffffff;
 }
 
-input:checked + .slider {
-  background-color: #b51616; /* Color when toggled */
-}
-
-input:checked + .slider:before {
-  transform: translateX(14px); /* Move the circle on toggle */
-}
-
-input,
-select {
-  padding: 10px;
-  margin-bottom: 20px;
-  font-size: 16px;
-  background-color: #ffe6dc; /* Black background for the inputs */
-  color: black; /* White text inside the inputs */
-  border: none; /* Remove borders */
-  border-radius: 4px;
-  box-sizing: border-box; /* Prevents overflow */
-  border-bottom: 2px solid black;
+.icon {
+  font-size: 18px;
+  margin-right: 15px;
+  color: #3f3f3f;
 }

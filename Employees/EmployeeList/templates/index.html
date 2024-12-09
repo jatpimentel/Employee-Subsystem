@@ -3,9 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Employee</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index.css' %}" />
   </head>
   <body>
-    Hilo
+    <div class="app-container">
+      <div class="navbar">
+        <div class="navbar-content">
+          <span class="icon">&#9776;</span>
+          <span class="logo">View Employee</span>
+          <div class="edit-button"></div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="content">
+        <ul>
+          <li class="list-item">
+            <span class="icon">&#9776;</span>
+            <a
+              href="#"
+              class="link"
+              onclick="window.location.href='/employee-list/';"
+              >Employee List</a
+            >
+          </li>
+          <li class="list-item">
+            <span class="icon">&#128203;</span>
+            <a
+              href="#"
+              class="link"
+              onclick="window.location.href='/role-list/';"
+              >Roles</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>

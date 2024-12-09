@@ -24,7 +24,7 @@
           <div class="edit-button">
             <button
               class="edit-button"
-              onclick="window.location.href='/role-edit/{{role.id}}';"
+              onclick="window.location.href='/role-list/';"
               style="cursor: pointer"
             >
               Save
@@ -37,7 +37,7 @@
         <div class="role-view">
           <div class="role-field">
             <label class="field-label">Name of Role</label>
-            <span class="field-value">{{ role.person.username }}</span>
+            <span class="field-value">{{ role.role_name }}</span>
           </div>
           <div class="role-field">
             <label class="field-label">Ordering System and POS</label>
