@@ -56,10 +56,18 @@ def employee_edit(request, id):
 
     return render(request, 'employee-edit.html', {'employee': employee_obj, 'person_form': person_form, 'employee_form': employee_form})
 
-
-
-
-
 def employee_view(request, id):
     employee_obj = get_object_or_404(employee, id=id)
     return render(request, 'employee-view.html', {'employee': employee_obj})
+
+def role_list(request):
+    return render(request,'role-list.html')
+
+def role_create(request):
+    return render(request,'role-create.html')
+
+def role_view(request):
+    return render(request,'role-view.html')
+
+def role_edit(request):
+    return render(request,'role-edit.html')
