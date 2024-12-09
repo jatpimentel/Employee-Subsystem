@@ -1,0 +1,150 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffe6dc;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.navbar {
+  background-color: #b51616;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80px;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 1450px;
+}
+
+.back-button {
+  background-color: #b51616;
+  color: white;
+  border: none;
+  font-size: 50px;
+  cursor: pointer;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.edit-button {
+  background-color: #b51616;
+  color: white;
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #9f1212; /* Slightly darker red on hover */
+  transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+.form-container {
+  width: 100%;
+  max-width: 600px; /* Restrict max width of form */
+  padding: 20px;
+  background-color: #ffe6dc;
+  box-sizing: border-box; /* Prevent overflow */
+  margin: 20px 0; /* Add spacing at the top and bottom */
+}
+
+.role-view {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.role-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field-label {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.field-value {
+  font-size: 16px;
+  padding: 10px 0;
+  border-bottom: 2px solid black;
+  color: black;
+}
+.role-field:last-child .field-value {
+  border-bottom: none; /* Remove the bottom border for the PIN field */
+}
+input.field-value {
+  width: 100%; /* Full width */
+  padding: 10px; /* Padding inside the input */
+  border: 2px solid black; /* Border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+}
+
+/* Toggle switch styles */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+  margin-left: 10px; /* Spacing between label and toggle */
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px; /* Rounded edges */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%; /* Circle shape */
+}
+
+input:checked + .slider {
+  background-color: #b51616; /* Color when toggled */
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px); /* Move the circle on toggle */
+}
