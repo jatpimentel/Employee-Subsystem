@@ -47,11 +47,6 @@
                 <input type="text" name="contact_number" value="{{ employee.person.contact_number }}" required/>
             </div>
             
-            <!-- Employee-Specific Fields -->
-            <div class="employee-form">
-                <label>Role</label>
-                {{ employee_form.role }}  <!-- Bound to employee_form -->
-            </div>
             <div class="employee-form">
                 <label>PIN</label>
                 <input type="number" name="pin" value="{{ employee.pin }}" required/>

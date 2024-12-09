@@ -1,5 +1,5 @@
 from django import forms
-from .models import person,employee,access_rights,role
+from .models import person,employee
 
 class personform(forms.ModelForm):
     class Meta:
@@ -9,4 +9,4 @@ class personform(forms.ModelForm):
 class employeeform(forms.ModelForm):
     class Meta:
         model = employee
-        fields = ['person', 'role', 'pin', 'employee_status']
+        fields = ['person', 'pin', 'employee_status']

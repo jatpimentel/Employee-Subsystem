@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import person, role, employee
+from .models import person, employee
 from .forms import personform, employeeform
 
 # Create your views here.
@@ -71,24 +71,5 @@ def employee_view(request, id):
     employee_obj = get_object_or_404(employee, id=id)
     return render(request, 'employee-view.html', {'employee': employee_obj})
 
-def role_list(request):
-    all_roles = role.objects.all()  
-    role_counts = {
-        role_item: employee.objects.filter(role=role_item).count()
-        for role_item in all_roles
-    }
-    return render(request, 'role-list.html', {
-        'roles_with_counts': role_counts, 
-        'roles': all_roles
-    })
 
-def role_create(request):
-    return render(request, 'role-create.html')
 
-def role_view(request, id):
-    role_obj = get_object_or_404(role, id=id)
-    return render(request, 'role-view.html', {'role': role_obj})
-
-def role_edit(request, id):
-    role_obj = get_object_or_404(role, id=id)
-    return render(request, 'role-edit.html', {'role': role_obj})

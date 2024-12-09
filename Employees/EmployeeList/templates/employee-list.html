@@ -52,7 +52,6 @@
             <th>Name</th>
             <th>Email</th>
             <th>Contact Number</th>
-            <th>Role</th>
           </tr>
         </thead>
         <tbody>
@@ -65,7 +64,6 @@
             <td>{{ item.person.first_name }} {{ item.person.last_name }}</td>
             <td>{{ item.person.email }}</td>
             <td>{{ item.person.contact_number }}</td>
-            <td>{{ item.role.role_name }}</td>
           </tr>
           {% empty %}
           <tr>
