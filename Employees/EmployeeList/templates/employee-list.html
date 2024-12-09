@@ -17,22 +17,31 @@
               onclick="window.location.href='/';"
               style="cursor: pointer"
             >
-              <
+              &lt;
             </button>
           </div>
 
           <span class="logo">Employee List</span>
 
-          <div class="radio-buttons">
-            <label>
-              <input type="radio" name="status" />
-              Active
-            </label>
-            <label>
-              <input type="radio" name="status" />
-              Inactive
-            </label>
-          </div>
+          <form method="GET" id="filter-form">
+            <div class="radio-buttons">
+              <label>
+                <input type="radio" name="status" value="active"
+                request.GET.status == "active" onchange="this.form.submit()" />
+                Active
+              </label>
+              <label>
+                <input type="radio" name="status" value="inactive"
+                request.GET.status == "inactive" onchange="this.form.submit()"
+                /> Inactive
+              </label>
+              <label>
+                <input type="radio" name="status" value="all" request.GET.status
+                == "all" or not request.GET.status onchange="this.form.submit()"
+                /> All
+              </label>
+            </div>
+          </form>
         </div>
       </div>
 
@@ -49,14 +58,18 @@
         <tbody>
           {% for item in employees %}
           <tr
-            onclick="window.location.href='/employee-view/{{item.id}}';"
+            onclick="window.location.href='/employee-view/{{ item.id }}';"
             style="cursor: pointer"
           >
-            <td>{{item.person.username}}</td>
-            <td>{{item.person.first_name}} {{item.person.last_name}}</td>
-            <td>{{item.person.email}}</td>
-            <td>{{item.person.contact_number}}</td>
-            <td>{{item.role.role_name}}</td>
+            <td>{{ item.person.username }}</td>
+            <td>{{ item.person.first_name }} {{ item.person.last_name }}</td>
+            <td>{{ item.person.email }}</td>
+            <td>{{ item.person.contact_number }}</td>
+            <td>{{ item.role.role_name }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="5">No employees found.</td>
           </tr>
           {% endfor %}
         </tbody>
