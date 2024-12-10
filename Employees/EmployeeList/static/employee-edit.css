@@ -53,18 +53,18 @@ body {
 }
 
 .save-button:hover {
-  background-color: #9f1212; /* Slightly darker red on hover */
-  transform: scale(1.1); /* Slightly enlarge the button on hover */
+  background-color: #9f1212;
+  transform: scale(1.1);
 }
 
 .form-container {
   width: 100%;
-  max-width: 600px; /* Restrict max width of form */
+  max-width: 600px;
   flex-grow: 1;
   padding: 20px;
-  background-color: #ffe6dc; /* Form background color */
+  background-color: #ffe6dc;
   margin-top: 20px;
-  box-sizing: border-box; /* Ensures padding doesn't affect the width */
+  box-sizing: border-box;
 }
 
 .employee-form {
@@ -84,11 +84,11 @@ select {
   padding: 10px;
   margin-bottom: 20px;
   font-size: 16px;
-  background-color: #ffe6dc; /* Black background for the inputs */
-  color: black; /* White text inside the inputs */
-  border: none; /* Remove borders */
+  background-color: #ffe6dc;
+  color: black;
+  border: none;
   border-radius: 4px;
-  box-sizing: border-box; /* Prevents overflow */
+  box-sizing: border-box;
   border-bottom: 2px solid black;
 }
 
@@ -100,9 +100,9 @@ select {
   font-size: 20px;
   letter-spacing: 20px;
   text-align: center;
-  background-color: #ffe6dc; /* Black background for PIN input */
-  color: black; /* White text for PIN input */
-  border: none; /* Remove the border */
+  background-color: #ffe6dc;
+  color: black;
+  border: none;
 }
 
 input:focus,

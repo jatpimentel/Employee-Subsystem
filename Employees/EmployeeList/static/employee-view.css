@@ -54,17 +54,17 @@ body {
 }
 
 .edit-button:hover {
-  background-color: #9f1212; /* Slightly darker red on hover */
-  transform: scale(1.1); /* Slightly enlarge the button on hover */
+  background-color: #9f1212;
+  transform: scale(1.1);
 }
 
 .form-container {
   width: 100%;
-  max-width: 600px; /* Restrict max width of form */
+  max-width: 600px;
   padding: 20px;
   background-color: #ffe6dc;
-  box-sizing: border-box; /* Prevent overflow */
-  margin: 20px 0; /* Add spacing at the top and bottom */
+  box-sizing: border-box;
+  margin: 20px 0;
 }
 
 .employee-view {
@@ -92,5 +92,5 @@ body {
   color: black;
 }
 .employee-field:last-child .field-value {
-  border-bottom: none; /* Remove the bottom border for the PIN field */
+  border-bottom: none;
 }

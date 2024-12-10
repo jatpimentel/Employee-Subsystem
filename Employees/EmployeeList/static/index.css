@@ -30,7 +30,7 @@ body {
 .logo {
   font-size: 30px;
   font-weight: bold;
-  margin-left: 15px; /* Adjust margin for better spacing */
+  margin-left: 15px;
 }
 
 .back-button {
@@ -54,41 +54,41 @@ body {
 }
 
 .edit-button:hover {
-  background-color: #9f1212; /* Slightly darker red on hover */
-  transform: scale(1.1); /* Slightly enlarge the button on hover */
+  background-color: #9f1212;
+  transform: scale(1.1);
 }
 
 .content {
-  padding: 20px; /* Add padding around content */
-  flex-grow: 1; /* Allow content to grow */
+  padding: 20px;
+  flex-grow: 1;
 }
 
 .list {
-  list-style-type: none; /* Remove bullet points */
-  padding: 0; /* Remove default padding */
+  list-style-type: none;
+  padding: 0;
 }
 
 .list-item {
   display: flex;
-  align-items: center; /* Align icon and text vertically */
-  margin-bottom: 15px; /* Space between items */
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .link {
-  font-size: 24px; /* Increase font size for links */
-  color: #3f3f3f; /* Link color */
-  text-decoration: none; /* Remove underline from links */
-  margin-left: 10px; /* Space between icon and text */
-  flex-grow: 1; /* Allow link to take available space */
+  font-size: 24px;
+  color: #3f3f3f;
+  text-decoration: none;
+  margin-left: 10px;
+  flex-grow: 1;
 }
 
 .link:hover {
-  text-decoration: underline; /* Underline on hover for links */
+  text-decoration: underline;
 }
 
 .icon {
-  font-size: 28px; /* Increase icon size */
+  font-size: 28px;
   color: #3f3f3f;
-  width: 30px; /* Fixed width for alignment */
-  text-align: center; /* Center the icon within the width */
+  width: 30px;
+  text-align: center;
 }

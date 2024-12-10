@@ -18,7 +18,7 @@ class employee (models.Model):
     INACTIVE = 'inactive'
     EMPLOYEE_STATUS_CHOICES = [
         (ACTIVE, 'Active'),
-        (INACTIVE, 'Not Active'),
+        (INACTIVE, 'Inactive'),
     ]
     
     person = models.ForeignKey(person, on_delete=models.CASCADE, blank=True, null=True)

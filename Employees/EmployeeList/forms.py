@@ -9,4 +9,4 @@ class personform(forms.ModelForm):
 class employeeform(forms.ModelForm):
     class Meta:
         model = employee
-        fields = ['person', 'pin', 'employee_status']
+        fields = ['person', 'pin','employee_status']
